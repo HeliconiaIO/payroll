@@ -2,7 +2,7 @@
 
 {
     "name": "Payroll",
-    "version": "14.0.3.0.1",
+    "version": "14.0.4.0.0",
     "category": "Human Resources",
     "website": "https://github.com/OCA/payroll",
     "sequence": 38,
@@ -19,7 +19,6 @@
         "wizard/hr_payroll_payslips_by_employees_views.xml",
         "views/menus.xml",
         "views/hr_contract_views.xml",
-        "views/hr_contract_advantage_views.xml",
         "views/hr_payroll_structure_views.xml",
         "views/hr_salary_rule_category_views.xml",
         "views/hr_contribution_register_views.xml",
