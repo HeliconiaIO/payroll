@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 23:24+0000\n"
-"PO-Revision-Date: 2022-07-01 19:05+0000\n"
+"PO-Revision-Date: 2022-08-10 00:07+0000\n"
 "Last-Translator: Nicolas Rodriguez Sande <nicolasrsande@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/odoo/teams/41243/es/)\n"
 "Language: es_AR\n"
@@ -483,7 +483,7 @@ msgstr "Cálculo"
 #. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payslip_view_form
 msgid "Compute Sheet"
-msgstr "Calcular hoja"
+msgstr "Liquidar"
 
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_payslip_line__condition_select
@@ -570,7 +570,7 @@ msgstr "Subsidio de Transporte para Marc Demo"
 #: model:ir.model.fields,field_description:payroll.field_hr_rule_parameter__country_id
 #: model:ir.model.fields,field_description:payroll.field_hr_rule_parameter_value__country_id
 msgid "Country"
-msgstr ""
+msgstr "Pais"
 
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_contract_advantage_template__create_uid
@@ -866,7 +866,7 @@ msgstr "Generar"
 #: model:ir.actions.act_window,name:payroll.action_hr_payslip_by_employees
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payslip_run_view_form
 msgid "Generate Payslips"
-msgstr "Generar liquidación de sueldos"
+msgstr "Generar liquidaciones"
 
 #. module: payroll
 #: model:ir.model,name:payroll.model_hr_payslip_employees
@@ -1230,7 +1230,7 @@ msgstr "Siguiente Tipo de Actividad"
 #: code:addons/payroll/models/hr_rule_parameter.py:0
 #, python-format
 msgid "No rule parameter with code '%s' was found for %s "
-msgstr ""
+msgstr "No se encontró ningún parámetro con código '%s' para la fecha %s "
 
 #. module: payroll
 #: code:addons/payroll/models/hr_payslip.py:0
@@ -1297,7 +1297,7 @@ msgstr "Otras Entradas"
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_rule_parameter_value__parameter_value
 msgid "Parameter Value"
-msgstr ""
+msgstr "Valor"
 
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_payroll_structure__parent_id
@@ -1372,17 +1372,17 @@ msgstr "Contabilidad de Liquidación de Sueldos"
 #. module: payroll
 #: model:ir.model,name:payroll.model_report_payroll_report_contributionregister
 msgid "Payroll Contribution Register Report"
-msgstr "Reporte de Registros de Contribucion"
+msgstr "Reporte de registros de contribución"
 
 #. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.res_config_settings_view_form
 msgid "Payroll Entries"
-msgstr "Registros de la Liquidación de Sueldos"
+msgstr "Registros de la liquidación de sueldos"
 
 #. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payroll_structure_view_search
 msgid "Payroll Structures"
-msgstr "Estructuras de Liquidación de Sueldos"
+msgstr "Estructuras de liquidación de sueldos"
 
 #. module: payroll
 #: model:ir.actions.report,name:payroll.action_report_payslip
@@ -1402,7 +1402,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:payroll.field_hr_payslip__payslip_run_id
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payslip_run_view_search
 msgid "Payslip Batches"
-msgstr "Procesamientos de Liquidaciones"
+msgstr "Procesamiento de liquidaciones"
 
 #. module: payroll
 #: model:ir.actions.act_window,name:payroll.hr_payslip_line_action_computation_details
@@ -1485,12 +1485,12 @@ msgstr "Liquidaciones de Sueldo"
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payslip_run_view_form
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payslip_run_view_tree
 msgid "Payslips Batches"
-msgstr "Procesamientos de Liquidaciones"
+msgstr "Procesamiento de liquidaciones"
 
 #. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.view_hr_payslip_by_employees
 msgid "Payslips by Employees"
-msgstr "Liquidaciones de Sueldo por Empleados"
+msgstr "Liquidaciones de sueldo por empleado"
 
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_payslip_line__amount_percentage
@@ -1639,12 +1639,12 @@ msgstr "Regla"
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_rule_parameter_value__rule_parameter_id
 msgid "Rule Parameter"
-msgstr ""
+msgstr "Parámetro de regla salarial"
 
 #. module: payroll
 #: model:ir.ui.menu,name:payroll.menu_action_hr_salary_rule_parameter
 msgid "Rule Parameters"
-msgstr ""
+msgstr "Parámetros de reglas salariales"
 
 #. module: payroll
 #: model:ir.model.fields,field_description:payroll.field_hr_payslip__message_has_sms_error
@@ -1692,17 +1692,17 @@ msgstr "Entrada de regla salarial"
 #: model:ir.model,name:payroll.model_hr_rule_parameter
 #: model_terms:ir.ui.view,arch_db:payroll.hr_rule_parameter_view_form
 msgid "Salary Rule Parameter"
-msgstr ""
+msgstr "Parámetro de regla salarial"
 
 #. module: payroll
 #: model:ir.model,name:payroll.model_hr_rule_parameter_value
 msgid "Salary Rule Parameter Value"
-msgstr ""
+msgstr "Valor del parámetro de regla salarial"
 
 #. module: payroll
 #: model:ir.actions.act_window,name:payroll.hr_rule_parameter_action
 msgid "Salary Rule Parameters"
-msgstr ""
+msgstr "Parámetros de reglas salariales"
 
 #. module: payroll
 #: model:ir.actions.act_window,name:payroll.action_salary_rule_form
@@ -1888,11 +1888,15 @@ msgstr "Días de trabajo totales"
 #: model:ir.model.constraint,message:payroll.constraint_hr_rule_parameter__unique
 msgid "Two rule parameters cannot have the same code."
 msgstr ""
+"Los parametros de reglas salariales no pueden tener el mismo código que "
+"otros existentes."
 
 #. module: payroll
 #: model:ir.model.constraint,message:payroll.constraint_hr_rule_parameter_value__unique
 msgid "Two rules parameters with the same code cannot start the same day"
 msgstr ""
+"Los valores de parametros de reglas salariales con el mismo código no pueden "
+"comenzar el mismo dia"
 
 #. module: payroll
 #: model:ir.model.fields,help:payroll.field_hr_payslip__activity_exception_decoration
@@ -1938,7 +1942,7 @@ msgstr "Se usa para mostrar la regla de salario en la liquidación de sueldo."
 #: model:ir.model.fields,field_description:payroll.field_hr_rule_parameter__parameter_version_ids
 #: model_terms:ir.ui.view,arch_db:payroll.hr_rule_parameter_view_form
 msgid "Versions"
-msgstr ""
+msgstr "Versiones"
 
 #. module: payroll
 #: model:ir.model.fields.selection,name:payroll.selection__hr_payslip__state__verify
