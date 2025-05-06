@@ -1246,9 +1246,7 @@ msgstr "Om den är markerad kräver nya meddelanden din uppmärksamhet."
 
 #. module: payroll
 #: model:ir.model.fields,help:payroll.field_hr_payslip__message_has_error
-#: model:ir.model.fields,help:payroll.field_hr_payslip__message_has_sms_error
 #: model:ir.model.fields,help:payroll.field_hr_payslip_run__message_has_error
-#: model:ir.model.fields,help:payroll.field_hr_payslip_run__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om kryssrutan är markerad får vissa meddelanden ett leveransfel."
 
@@ -1669,11 +1667,6 @@ msgid "Payroll Accounting"
 msgstr "Redovisning av löner"
 
 #. module: payroll
-#: model:ir.model.fields,field_description:payroll.field_hr_leave_type__code
-msgid "Payroll Code"
-msgstr "Lönekod"
-
-#. module: payroll
 #: model:ir.model,name:payroll.model_report_payroll_report_contributionregister
 msgid "Payroll Contribution Register Report"
 msgstr "Rapport om löneavgiftsregister"
@@ -2023,12 +2016,6 @@ msgid "Rule Configuration"
 msgstr "Regelkonfiguration"
 
 #. module: payroll
-#: model:ir.model.fields,field_description:payroll.field_hr_payslip__message_has_sms_error
-#: model:ir.model.fields,field_description:payroll.field_hr_payslip_run__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Fel vid leverans av SMS"
-
-#. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.hr_salary_rule_category_view_form
 msgid "Salary Categories"
 msgstr "Lönekategorier"
@@ -2277,11 +2264,6 @@ msgstr ""
 "variabel namn (hra, ma, lta, etc.) och den variabla grundläggande."
 
 #. module: payroll
-#: model:ir.model,name:payroll.model_hr_leave_type
-msgid "Time Off Type"
-msgstr "Typ av ledig tid"
-
-#. module: payroll
 #. odoo-python
 #: code:addons/payroll/models/hr_payslip.py:0
 msgid ""
@@ -2431,3 +2413,12 @@ msgstr "resultat kommer att påverkas av en variabel"
 #: model_terms:ir.ui.view,arch_db:payroll.hr_payslip_line_view_form
 msgid "total_net"
 msgstr "total_net"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Fel vid leverans av SMS"
+
+#~ msgid "Payroll Code"
+#~ msgstr "Lönekod"
+
+#~ msgid "Time Off Type"
+#~ msgstr "Typ av ledig tid"

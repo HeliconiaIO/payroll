@@ -1153,9 +1153,7 @@ msgstr ""
 
 #. module: payroll
 #: model:ir.model.fields,help:payroll.field_hr_payslip__message_has_error
-#: model:ir.model.fields,help:payroll.field_hr_payslip__message_has_sms_error
 #: model:ir.model.fields,help:payroll.field_hr_payslip_run__message_has_error
-#: model:ir.model.fields,help:payroll.field_hr_payslip_run__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -1562,11 +1560,6 @@ msgid "Payroll Accounting"
 msgstr ""
 
 #. module: payroll
-#: model:ir.model.fields,field_description:payroll.field_hr_leave_type__code
-msgid "Payroll Code"
-msgstr ""
-
-#. module: payroll
 #: model:ir.model,name:payroll.model_report_payroll_report_contributionregister
 msgid "Payroll Contribution Register Report"
 msgstr ""
@@ -1915,12 +1908,6 @@ msgid "Rule Configuration"
 msgstr ""
 
 #. module: payroll
-#: model:ir.model.fields,field_description:payroll.field_hr_payslip__message_has_sms_error
-#: model:ir.model.fields,field_description:payroll.field_hr_payslip_run__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.hr_salary_rule_category_view_form
 msgid "Salary Categories"
 msgstr "Categorias salariais"
@@ -2157,11 +2144,6 @@ msgstr ""
 "Isso será usado para calcular os valores de campos %; em geral, é em básico, "
 "mas também pode usar os campos de categorias de código em letras minúsculas "
 "como em nomes de variáveis ​​(hra, ma, lta, etc) e variáveis básicos."
-
-#. module: payroll
-#: model:ir.model,name:payroll.model_hr_leave_type
-msgid "Time Off Type"
-msgstr ""
 
 #. module: payroll
 #. odoo-python

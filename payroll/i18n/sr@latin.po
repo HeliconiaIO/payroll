@@ -1143,9 +1143,7 @@ msgstr ""
 
 #. module: payroll
 #: model:ir.model.fields,help:payroll.field_hr_payslip__message_has_error
-#: model:ir.model.fields,help:payroll.field_hr_payslip__message_has_sms_error
 #: model:ir.model.fields,help:payroll.field_hr_payslip_run__message_has_error
-#: model:ir.model.fields,help:payroll.field_hr_payslip_run__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -1543,11 +1541,6 @@ msgid "Payroll Accounting"
 msgstr ""
 
 #. module: payroll
-#: model:ir.model.fields,field_description:payroll.field_hr_leave_type__code
-msgid "Payroll Code"
-msgstr ""
-
-#. module: payroll
 #: model:ir.model,name:payroll.model_report_payroll_report_contributionregister
 msgid "Payroll Contribution Register Report"
 msgstr ""
@@ -1896,12 +1889,6 @@ msgid "Rule Configuration"
 msgstr ""
 
 #. module: payroll
-#: model:ir.model.fields,field_description:payroll.field_hr_payslip__message_has_sms_error
-#: model:ir.model.fields,field_description:payroll.field_hr_payslip_run__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: payroll
 #: model_terms:ir.ui.view,arch_db:payroll.hr_salary_rule_category_view_form
 msgid "Salary Categories"
 msgstr ""
@@ -2132,11 +2119,6 @@ msgid ""
 "This will be used to compute the % fields values; in general it is on basic, "
 "but you can also use categories code fields in lowercase as a variable names "
 "(hra, ma, lta, etc.) and the variable basic."
-msgstr ""
-
-#. module: payroll
-#: model:ir.model,name:payroll.model_hr_leave_type
-msgid "Time Off Type"
 msgstr ""
 
 #. module: payroll
