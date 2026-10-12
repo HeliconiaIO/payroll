@@ -93,11 +93,11 @@ class HrPayslip(models.Model):
                 move_line_analytic_ids = {}
                 if slip.contract_id.analytic_account_id:
                     move_line_analytic_ids.update(
-                        {line.slip_id.contract_id.analytic_account_id.id: 100}
+                        {str(line.slip_id.contract_id.analytic_account_id.id): 100}
                     )
                 elif line.salary_rule_id.analytic_account_id:
                     move_line_analytic_ids.update(
-                        {line.salary_rule_id.analytic_account_id.id: 100}
+                        {str(line.salary_rule_id.analytic_account_id.id): 100}
                     )
 
                 if debit_account_id:

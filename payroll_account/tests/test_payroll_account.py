@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 
 from dateutil import relativedelta
 
-from odoo import fields
+from odoo import Command, fields
 from odoo.exceptions import UserError
 from odoo.tests import Form, common
 
@@ -42,13 +42,11 @@ class TestPayrollAccount(common.TransactionCase):
         self.payslip_action_id = self.ref("payroll.hr_payslip_menu")
 
         partner = self.env["res.partner"].create({"name": "Partner 12"})
-        bank = self.env["res.bank"].create({"name": "Test Bank"})
         self.res_partner_bank = self.env["res.partner.bank"].create(
             {
-                "acc_number": "001-9876543-21",
+                "account_number": "001-9876543-21",
                 "partner_id": partner.id,
-                "acc_type": "bank",
-                "bank_id": bank.id,
+                "bank_name": "Test Bank",
             }
         )
 
@@ -112,7 +110,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Salary Structure for Software Developer",
                 "code": "SD",
-                "rule_ids": [(6, 0, rules)],
+                "rule_ids": [Command.set(rules)],
             }
         )
 
@@ -152,9 +150,11 @@ class TestPayrollAccount(common.TransactionCase):
             "name": res["value"]["name"],
         }
         vals["worked_days_line_ids"] = [
-            (0, 0, i) for i in res["value"]["worked_days_line_ids"]
+            Command.create(i) for i in res["value"]["worked_days_line_ids"]
         ]
-        vals["input_line_ids"] = [(0, 0, i) for i in res["value"]["input_line_ids"]]
+        vals["input_line_ids"] = [
+            Command.create(i) for i in res["value"]["input_line_ids"]
+        ]
         vals.update({"contract_id": self.hr_contract_john.id})
         self.hr_payslip.write(vals)
         return self.hr_payslip
@@ -296,7 +296,7 @@ class TestPayrollAccount(common.TransactionCase):
         wizard = (
             self.env["hr.payslip.employees"]
             .with_context(active_id=run.id)
-            .create({"employee_ids": [(6, 0, employee.ids)]})
+            .create({"employee_ids": [Command.set(employee.ids)]})
         )
         wizard.compute_sheet()
         slip = self.env["hr.payslip"].search(
@@ -318,7 +318,7 @@ class TestPayrollAccount(common.TransactionCase):
         wizard = (
             self.env["hr.payslip.employees"]
             .with_context(active_id=run.id)
-            .create({"employee_ids": [(6, 0, self.hr_employee_john.ids)]})
+            .create({"employee_ids": [Command.set(self.hr_employee_john.ids)]})
         )
         wizard.compute_sheet()
         slip = self.env["hr.payslip"].search(
@@ -366,7 +366,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Debit Only Structure",
                 "code": "DOS",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -399,7 +399,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Credit Only Structure",
                 "code": "COS",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -435,7 +435,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Debit Only Structure 2",
                 "code": "DOS2",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -476,7 +476,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Credit Only Structure 2",
                 "code": "COS2",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -511,7 +511,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Zero Amount Structure",
                 "code": "ZAS",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -542,7 +542,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Analytic Structure",
                 "code": "ANS",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -579,7 +579,7 @@ class TestPayrollAccount(common.TransactionCase):
             {
                 "name": "Analytic Structure 2",
                 "code": "ANS2",
-                "rule_ids": [(6, 0, [rule.id])],
+                "rule_ids": [Command.set([rule.id])],
             }
         )
         self.hr_contract_john.struct_id = structure.id
@@ -602,8 +602,8 @@ class TestPayrollAccount(common.TransactionCase):
         payslip.action_payslip_done()
         move = payslip.move_id
         move.journal_id.restrict_mode_hash_table = True
-        self.env["ir.config_parameter"].sudo().set_param(
-            "payroll.allow_cancel_payslips", "True"
+        self.env["ir.config_parameter"].sudo().set_bool(
+            "payroll.allow_cancel_payslips", True
         )
         payslip.action_payslip_cancel()
         self.assertFalse(payslip.move_id)

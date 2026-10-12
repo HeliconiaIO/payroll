@@ -39,15 +39,14 @@ class HrPayslipLine(models.Model):
 
         if acc_type in ("asset_receivable", "liability_current"):
             # Employee-related accounts - always employee
-            return (
-                self.slip_id.employee_id.work_contact_id.id
-                if self.slip_id.employee_id.work_contact_id
-                else (
-                    self.slip_id.employee_id.bank_account_id.partner_id.id
-                    if self.slip_id.employee_id.bank_account_id
-                    else False
-                )
-            )
+            employee = self.slip_id.employee_id
+            if employee.work_contact_id:
+                return employee.work_contact_id.id
+            if employee.primary_bank_account_id:
+                return employee.primary_bank_account_id.partner_id.id
+            if employee.bank_account_ids:
+                return employee.bank_account_ids[0].partner_id.id
+            return False
 
         elif acc_type == "liability_payable":
             # Third-party payables - always register partner
