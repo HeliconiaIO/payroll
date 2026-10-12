@@ -1,6 +1,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 from dateutil import relativedelta
 
@@ -134,8 +134,8 @@ class TestPayrollAccount(common.TransactionCase):
         self.hra_rule.write({"account_debit": debit, "account_credit": credit})
 
     def _prepare_payslip(self, employee):
-        date_from = datetime.now()
-        date_to = datetime.now() + relativedelta.relativedelta(
+        date_from = datetime.now(tz=timezone.utc)
+        date_to = datetime.now(tz=timezone.utc) + relativedelta.relativedelta(
             months=+1, day=1, days=-1
         )
         self.hr_payslip = self.env["hr.payslip"].create(
